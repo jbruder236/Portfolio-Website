@@ -1,7 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
+import Typography from '@mui/material/Typography';
 
 function App() {
+
+  // Add this in your component file
+  require('react-dom');
+  window.React2 = require('react');
+  console.log(window.React1 === window.React2);
+
+
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +25,7 @@ function App() {
         >
           Learn React
         </a>
+        <Typography> Hello World! </Typography>
       </header>
     </div>
   );
