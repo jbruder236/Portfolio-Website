@@ -1,32 +1,22 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 
+import Navbar from './components/Navbar';
+import Welcome from './components/Welcome';
+
+import logo from './logo.svg';
+
 function App() {
-
-  // Add this in your component file
-  require('react-dom');
-  window.React2 = require('react');
-  console.log(window.React1 === window.React2);
-
 
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <Typography> Hello World! </Typography>
+        <Navbar />
       </header>
+      <Welcome />
     </div>
   );
 }
