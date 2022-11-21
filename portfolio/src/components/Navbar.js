@@ -5,13 +5,10 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
-
-import CssBaseline from '@mui/material/CssBaseline';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
-import Container from '@mui/material/Container';
 import Slide from '@mui/material/Slide';
+import Link from '@mui/material/Link';
 
 import logo from '../Logo.svg'
 
@@ -42,6 +39,12 @@ HideOnScroll.propTypes = {
 };
 
 
+/* TODO:
+    -Remove duplicated code for scroll variant
+    -Have IconButton redirect to jamesbruder.com
+    -Link underlining using state and link hash navigation
+    -Fix Link spacing for all screen sizes (hide/other nav if viewport is too narrow)
+*/
 
 Navbar.propTypes = {
     hideOnScroll: PropTypes.bool.isRequired
@@ -50,50 +53,108 @@ Navbar.propTypes = {
 export default function Navbar(props) {
     if(props.hideOnScroll){
         return (
-            <Box sx={{ flexGrow: 1 }}>
-              <HideOnScroll {...props}>
-                <AppBar position="fixed" style={{ background: 'transparent', boxShadow: 'none'}}>
-                    <Toolbar>
+            <HideOnScroll {...props}>
+                <AppBar position="fixed" style={{ background: 'transparent', boxShadow: 'none', paddingTop: '5px'}}>
+                    <Toolbar sx={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    flexWrap: 'nowrap',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    }}>
+                        <IconButton
+                            size="large"
+                            edge="start"
+                            color="inherit"
+                            aria-label="menu"
+                            sx={{ mr: 2 }}
+                            disableRipple
+                        >
+                            <img src={logo} alt="My Logo" />
+                            <Typography variant="h6">
+                                James Bruder
+                            </Typography>
+                        </IconButton>
+
+                        <Box sx={{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        flexWrap: 'nowrap',
+                        justifyContent: 'space-between',
+                        width: '30%',
+                        mr: '20px',
+                        }}>
+                            <Link href="#About" underline="always" color="#FFFFFF">
+                                About
+                            </Link>
+                            <Link href="#Resume" underline="none" color="#FFFFFF">
+                                Resume
+                            </Link>
+                            <Link href="#Projects" underline="none" color="#FFFFFF">
+                                Projects
+                            </Link>
+                            <Link href="#Interests" underline="none" color="#FFFFFF">
+                                Interests
+                            </Link>
+                            <Link href="#Contact" underline="none" color="#FFFFFF">
+                                Contact
+                            </Link>
+                        </Box>
+                    </Toolbar>
+                </AppBar>
+            </HideOnScroll>
+          );
+    }
+    else{
+        return (
+            <AppBar position="fixed" style={{ background: 'transparent', boxShadow: 'none', paddingTop: '5px'}}>
+                <Toolbar sx={{
+                display: 'flex',
+                flexDirection: 'row',
+                flexWrap: 'nowrap',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                }}>
                     <IconButton
                         size="large"
                         edge="start"
                         color="inherit"
                         aria-label="menu"
                         sx={{ mr: 2 }}
+                        disableRipple
                     >
                         <img src={logo} alt="My Logo" />
+                        <Typography variant="h6">
+                            James Bruder
+                        </Typography>
                     </IconButton>
-                    <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                        News
-                    </Typography>
-                    <Button color="inherit">Login</Button>
-                    </Toolbar>
-                </AppBar>
-              </HideOnScroll>
-            </Box>
-          );
-    }
-    else{
-        return (
-            <Box sx={{ flexGrow: 1 }}>
-              <AppBar position="fixed" style={{ background: 'transparent', boxShadow: 'none'}}>
-                  <Toolbar>
-                  <IconButton
-                      size="large"
-                      edge="start"
-                      color="inherit"
-                      aria-label="menu"
-                      sx={{ mr: 2 }}
-                  >
-                      <img src={logo} alt="My Logo" />
-                  </IconButton>
-                  <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                      News
-                  </Typography>
-                  <Button color="inherit">Login</Button>
-                  </Toolbar>
-              </AppBar>
-            </Box>
+
+                    <Box sx={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    flexWrap: 'nowrap',
+                    justifyContent: 'space-between',
+                    width: '30%',
+                    mr: '20px',
+                    }}>
+                        <Link href="#About" underline="always" color="#FFFFFF">
+                            About
+                        </Link>
+                        <Link href="#Resume" underline="none" color="#FFFFFF">
+                            Resume
+                        </Link>
+                        <Link href="#Projects" underline="none" color="#FFFFFF">
+                            Projects
+                        </Link>
+                        <Link href="#Interests" underline="none" color="#FFFFFF">
+                            Interests
+                        </Link>
+                        <Link href="#Contact" underline="none" color="#FFFFFF">
+                            Contact
+                        </Link>
+                    </Box>
+                </Toolbar>
+            </AppBar>
           );
     }
   }

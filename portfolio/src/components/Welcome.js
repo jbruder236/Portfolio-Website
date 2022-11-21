@@ -1,12 +1,32 @@
 import React from 'react';
 
+import Container from '@mui/material/Container';
+import Avatar from '@mui/material/Avatar';
+import Typography from '@mui/material/Typography';
+
 import background from "../background.png";
+import profile_pic from "../profile_pic.JPG";
 
 
 export default function Welcome(props) {
 
+    const imgsize = 250
+
     return (
-        <div style={{minHeight: '100vh', paddingTop: '10vh'}}>
+        <Container style={{minHeight: '175vh', paddingTop: '25vh'}}>
+            <Avatar 
+                alt="James Bruder" 
+                src={profile_pic}
+                sx={{ width: imgsize, height: imgsize, margin: 'auto' }}
+            />
+            <Typography variant="h3" color="#FFFFFF" mt="15px">
+                James Bruder
+            </Typography>
+            <Typography variant="h6" color="#FFFFFF" mt="8px">
+                Computer Science and Engineering Student
+                <br/>
+                University of Connecticut
+            </Typography>
             <p>
                 Hey! My name is James and I'm a Senior Computer Science Engineering student at University of Connecticut.
                 I will be looking for a software engineering job when I graduate in May 2023.
@@ -21,6 +41,6 @@ export default function Welcome(props) {
                 -Python
                 -ML/AI
             </p>
-        </div>
+        </Container>
     )
 }
