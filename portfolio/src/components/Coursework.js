@@ -61,7 +61,37 @@ export default function CourseworkPanel(props) {
     const tabTextColor = "#9382AB"
 
     return (
-        <Box sx={{ display: 'flex' }}>
+        <Box sx={{ display: 'flex', justifyContent: "flex-end" }}>
+            <TabPanel value={value} index={1}>
+                <Course
+                    description="Class Description" 
+                />
+            </TabPanel>
+            <TabPanel value={value} index={2}>
+                <Course
+                    description="Class Description" 
+                />
+            </TabPanel>
+            <TabPanel value={value} index={3}>
+                <Course
+                    description="Class Description" 
+                />
+            </TabPanel>
+            <TabPanel value={value} index={4}>
+                <Course
+                    description="Class Description" 
+                />
+            </TabPanel>
+            <TabPanel value={value} index={5}>
+                <Course
+                    description="Class Description" 
+                />
+            </TabPanel>
+            <TabPanel value={value} index={6}>
+                <Course
+                    description="Class Description" 
+                />
+            </TabPanel>
             <Tabs
                 orientation="vertical"
                 variant="scrollable"
@@ -70,9 +100,9 @@ export default function CourseworkPanel(props) {
                 aria-label="Vertical tabs example"
                 //textColor="white"
                 TabIndicatorProps={{
-                    sx: { backgroundColor: "#9382AB", width: 2 }
+                    sx: { backgroundColor: "#9382AB", width: 2, left: 0 }
                     }}
-                sx={{ borderRight: 1, borderColor: 'divider' }}
+                sx={{ borderLeft: 1, borderColor: 'divider' }}
             >
                 <Typography variant="h5" color="#FFFFFF" pb="10px">
                     Relevant Coursework
@@ -102,36 +132,6 @@ export default function CourseworkPanel(props) {
                         color: value === 6 ? tabTextColor : "",
                     }} />
             </Tabs>
-            <TabPanel value={value} index={1}>
-                <Course
-                    description="Description" 
-                />
-            </TabPanel>
-            <TabPanel value={value} index={2}>
-                <Course
-                    description="Description" 
-                />
-            </TabPanel>
-            <TabPanel value={value} index={3}>
-                <Course
-                    description="Description" 
-                />
-            </TabPanel>
-            <TabPanel value={value} index={4}>
-                <Course
-                    description="Description" 
-                />
-            </TabPanel>
-            <TabPanel value={value} index={5}>
-                <Course
-                    description="Description" 
-                />
-            </TabPanel>
-            <TabPanel value={value} index={6}>
-                <Course
-                    description="Description" 
-                />
-            </TabPanel>
         </Box>
     );
 }

@@ -13,6 +13,7 @@ import Box from '@mui/material/Box';
 import Navbar from './components/Navbar';
 import Welcome from './components/Welcome';
 import Resume from './components/Resume';
+import Projects from './components/Projects';
 
 //Assets
 import logo from './reactLogo.svg';
@@ -44,6 +45,13 @@ function App() {
           background: "#55617a",
       }}>
         <Resume />
+      </div>
+
+      <div style={{ 
+          background: "rgb(85,97,122)",
+          background: "linear-gradient(180deg, rgba(85,97,122,1) 0%, rgba(229,164,148,0.8) 65%)",
+      }}>
+        <Projects />
       </div>
 
     </div>

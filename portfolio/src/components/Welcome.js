@@ -13,7 +13,7 @@ export default function Welcome(props) {
     const imgsize = 250
 
     return (
-        <Container style={{minHeight: '175vh', paddingTop: '25vh'}}>
+        <Container style={{minHeight: '150vh', paddingTop: '25vh'}}>
             <Avatar 
                 alt="James Bruder" 
                 src={profile_pic}

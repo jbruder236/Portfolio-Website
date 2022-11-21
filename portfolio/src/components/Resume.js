@@ -45,8 +45,8 @@ function Education() {
 export default function Resume(props) {
 
     return (
-        <div style={{minHeight: '125vh', paddingTop: '25vh', paddingLeft: '5vh', paddingRight: '5vh'}}>
-            <Grid container spacing={2} mb={20}>
+        <div style={{minHeight: '100vh', paddingTop: '25vh', paddingLeft: '5vh', paddingRight: '5vh'}}>
+            <Grid container spacing={4} mb={15}>
                 <Grid item xs={12} md={4.5}>
                     <WorkExperiencePanel />
                 </Grid>
