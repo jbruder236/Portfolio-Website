@@ -12,10 +12,10 @@ import Stack from '@mui/material/Stack';
 import WorkExperiencePanel from './WorkExperience.js';
 import CourseworkPanel from './Coursework.js';
 
-import c_logo from '../C_logo.PNG';
-import react_logo from '../react_logo.png';
-import sql_logo from '../sql_logo.png';
-import python_logo from '../python_logo.png';
+import c_logo from '../assets/C_logo.PNG';
+import react_logo from '../assets/react_logo.png';
+import sql_logo from '../assets/sql_logo.png';
+import python_logo from '../assets/python_logo.png';
 
 
 function Education() {
@@ -41,7 +41,7 @@ function Education() {
     );
 }
 
-
+//TODO: Make Skills its own component
 export default function Resume(props) {
 
     return (
@@ -115,7 +115,13 @@ function SkillsPanel(props) {
                 title="Python"
                 description="Used Python for many of
                 the projects I've worked on.
-                Also used for SDP ML project" 
+                Also used for SDP ML project." 
+            />
+            <Skill
+                icon={python_logo}
+                title="Git"
+                description="I used git at MLI
+                and maintain my own repos." 
             />
         </Grid>
         </>

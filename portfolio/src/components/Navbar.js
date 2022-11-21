@@ -10,7 +10,7 @@ import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Slide from '@mui/material/Slide';
 import Link from '@mui/material/Link';
 
-import logo from '../Logo.svg'
+import logo from '../assets/Logo.svg'
 
 
 function HideOnScroll(props) {

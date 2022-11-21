@@ -4,8 +4,8 @@ import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 
-import background from "../background.png";
-import profile_pic from "../profile_pic.JPG";
+import background from "../assets/background.png";
+import profile_pic from "../assets/profile_pic.JPG";
 
 
 export default function Welcome(props) {

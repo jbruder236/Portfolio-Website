@@ -16,8 +16,8 @@ import Resume from './components/Resume';
 import Projects from './components/Projects';
 
 //Assets
-import logo from './reactLogo.svg';
-import background from "./background.png";
+import logo from './assets/reactLogo.svg';
+import background from "./assets/background.png";
 
 
 /* TODO:

@@ -7,7 +7,7 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 
-import background from "../background.png";
+import background from "../assets/background.png";
 
 
 function ProjectCard(props) {
