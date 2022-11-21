@@ -19,6 +19,10 @@ import logo from './reactLogo.svg';
 import background from "./background.png";
 
 
+/* TODO:
+      -Create Theme with Typography variants (white text)
+      -
+*/
 function App() {
 
   return (
@@ -40,9 +44,6 @@ function App() {
       }}>
         <Resume />
       </div>
-
-      //Placeholder Div
-      <div style={{minHeight: '20vh'}} />
 
     </div>
   );
