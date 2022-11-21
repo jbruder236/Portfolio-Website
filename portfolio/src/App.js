@@ -21,6 +21,7 @@ import background from "./background.png";
 
 /* TODO:
       -Create Theme with Typography variants (white text)
+      -Experiment with maxWidth for viewport for entire app
       -
 */
 function App() {

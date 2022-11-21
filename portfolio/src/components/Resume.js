@@ -7,9 +7,39 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
+import Stack from '@mui/material/Stack';
 
 import WorkExperiencePanel from './WorkExperience.js';
+import CourseworkPanel from './Coursework.js';
 
+import c_logo from '../C_logo.PNG';
+import react_logo from '../react_logo.png';
+import sql_logo from '../sql_logo.png';
+import python_logo from '../python_logo.png';
+
+
+function Education() {
+    return (
+        <>
+        <Box mt={4}>
+            <Typography variant="h5" color="#FFFFFF">
+                Education
+            </Typography>
+        </Box>
+        <Box mt={1}>
+            <Typography variant="p" color="#FFFFFF" align="left">
+                University of Connecticut, Storrs CT
+                <br/>
+                B.S.E Computer Science and Engineering
+                <br/>
+                Major GPA: 3.36
+                <br/>
+                Graduation Date: May 2023
+            </Typography>
+        </Box>
+        </>
+    );
+}
 
 
 export default function Resume(props) {
@@ -17,18 +47,14 @@ export default function Resume(props) {
     return (
         <div style={{minHeight: '125vh', paddingTop: '25vh', paddingLeft: '5vh', paddingRight: '5vh'}}>
             <Grid container spacing={2} mb={20}>
-                <Grid item xs={12} md={5}>
+                <Grid item xs={12} md={4.5}>
                     <WorkExperiencePanel />
                 </Grid>
-                <Grid item xs={12} md={2}>
-                    <Typography variant="h5" color="#FFFFFF">
-                        Education
-                    </Typography>
+                <Grid item xs={12} md={3}>
+                    <Education />
                 </Grid>
-                <Grid item xs={12} md={5}>
-                    <Typography variant="h5" color="#FFFFFF">
-                        Relevant Coursework
-                    </Typography>
+                <Grid item xs={12} md={4.5}>
+                    <CourseworkPanel />
                 </Grid>
             </Grid>
             <SkillsPanel />
@@ -37,11 +63,10 @@ export default function Resume(props) {
 }
 
 
-//Developer Skills:
 function Skill(props) {
     return (
         <Grid item xs={8} sm={6} md={4} lg={3}>
-            {props.icon}
+            <img src={props.icon} alt="Skill Icon" style={{maxWidth: props.iconWidth}} />
             <Typography variant="h5" color="#FFFFFF">
                 {props.title}
             </Typography>
@@ -52,22 +77,25 @@ function Skill(props) {
     );
 }
 
+//TODO: Investigate Grid container maxWidth and content centering
 function SkillsPanel(props) {
     return (
         <>
-        <Typography variant="h4" color="#FFFFFF">
+        <Typography variant="h3" color="#FFFFFF">
             Developer Skills/Tools
         </Typography>
-        <Grid container spacing={5} pt={5} justifyContent="center">
+        <Grid container spacing={8} pt={8} justifyContent="center">
             <Skill
-                icon={null}
+                icon={c_logo}
+                iconWidth="250px"
                 title="C/C++"
                 description="Took Systems Programming and
                 taught as a TA. Also took C++
                 class and blahh." 
             />
             <Skill
-                icon={null}
+                icon={react_logo}
+                iconWidth="150px"
                 title="ReactJS"
                 description="Worked on SPA for MLI
                 using the ReactJS Framework.
@@ -75,7 +103,7 @@ function SkillsPanel(props) {
                 alot of javascript in the process." 
             />
             <Skill
-                icon={null}
+                icon={sql_logo}
                 title="SQL"
                 description="Took Database Management
                 course and got comfortable
@@ -83,10 +111,10 @@ function SkillsPanel(props) {
                 along with querying." 
             />
             <Skill
-                icon={null}
+                icon={python_logo}
                 title="Python"
                 description="Used Python for many of
-                the projects I’ve worked on.
+                the projects I've worked on.
                 Also used for SDP ML project" 
             />
         </Grid>
