@@ -1,61 +1,46 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
+import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import TabContext from '@mui/lab/TabContext';
-import TabList from '@mui/lab/TabList';
-import TabPanel from '@mui/lab/TabPanel';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 
-import background from "../background.png";
+import WorkExperiencePanel from './WorkExperience.js';
 
 
-function ExperiencePanel(props) {
 
-    const [value, setValue] = React.useState('1');
-
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
-    };
+export default function Resume(props) {
 
     return (
-        <Grid container spacing={2} mb={20}>
-            <Grid item xs={4}>
-                <Typography variant="h5" color="#FFFFFF">
-                    Work Experience
-                </Typography>
-                <TabContext value={value}>
-                    <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                        <TabList onChange={handleChange} aria-label="lab API tabs example">
-                            <Tab label="Item One" value="1" />
-                            <Tab label="Item Two" value="2" />
-                            <Tab label="Item Three" value="3" />
-                        </TabList>
-                    </Box>
-                    <TabPanel value="1">Item One</TabPanel>
-                    <TabPanel value="2">Item Two</TabPanel>
-                    <TabPanel value="3">Item Three</TabPanel>
-                </TabContext>
+        <div style={{minHeight: '125vh', paddingTop: '25vh', paddingLeft: '5vh', paddingRight: '5vh'}}>
+            <Grid container spacing={2} mb={20}>
+                <Grid item xs={12} md={5}>
+                    <WorkExperiencePanel />
+                </Grid>
+                <Grid item xs={12} md={2}>
+                    <Typography variant="h5" color="#FFFFFF">
+                        Education
+                    </Typography>
+                </Grid>
+                <Grid item xs={12} md={5}>
+                    <Typography variant="h5" color="#FFFFFF">
+                        Relevant Coursework
+                    </Typography>
+                </Grid>
             </Grid>
-            <Grid item xs={4}>
-                <Typography variant="h5" color="#FFFFFF">
-                    Education
-                </Typography>
-            </Grid>
-            <Grid item xs={4}>
-                <Typography variant="h5" color="#FFFFFF">
-                    Relevant Coursework
-                </Typography>
-            </Grid>
-        </Grid>
-    );
+            <SkillsPanel />
+        </div>
+    )
 }
 
+
+//Developer Skills:
 function Skill(props) {
     return (
-        <Grid item xs={6} sm={4} md={3}>
+        <Grid item xs={8} sm={6} md={4} lg={3}>
             {props.icon}
             <Typography variant="h5" color="#FFFFFF">
                 {props.title}
@@ -73,7 +58,7 @@ function SkillsPanel(props) {
         <Typography variant="h4" color="#FFFFFF">
             Developer Skills/Tools
         </Typography>
-        <Grid container spacing={5} pt={5}>
+        <Grid container spacing={5} pt={5} justifyContent="center">
             <Skill
                 icon={null}
                 title="C/C++"
@@ -107,15 +92,4 @@ function SkillsPanel(props) {
         </Grid>
         </>
     );
-}
-
-
-export default function Resume(props) {
-
-    return (
-        <Container style={{minHeight: '125vh', paddingTop: '25vh'}}>
-            <ExperiencePanel />
-            <SkillsPanel />
-        </Container>
-    )
 }
