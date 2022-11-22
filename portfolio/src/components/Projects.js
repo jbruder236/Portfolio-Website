@@ -10,6 +10,7 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
+import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 
 import drone from "../assets/drone.png";
@@ -19,17 +20,21 @@ import septicsensor from "../assets/septicsensor.png";
 import arcade from "../assets/arcade.PNG";
 
 
+//TODO: Fix dialog width
 //A dialog with a close button
 function ProjectPopup(props) {
 	return (
-		<Dialog open={props.open} onClose={props.handleClose}>
+		<Dialog open={props.open} onClose={props.handleClose} fullWidth maxWidth="lg">
 			<DialogContent sx={{backgroundColor: "#6D676E"}}>
                 <Box mb={1} sx={{display: 'flex', justifyContent: "flex-end"}}>
                     <Button onClick={props.handleClose}>X</Button>
                 </Box>
-                <Box mb={1} sx={{display: 'flex', justifyContent: "center"}}>
+                <Box mb={1} sx={{display: 'flex', flexDirection: 'column', alignItems: "center"}}>
                     <Typography variant="h4" color="#E7CF6C">
                         {props.title}
+                    </Typography>
+                    <Typography variant="h6" color="#FFFFFF">
+                        {props.subtitle}
                     </Typography>
                 </Box>
 				{props.children}
@@ -69,15 +74,23 @@ function ProjectCard(props) {
             </div>
             <ProjectPopup
                 title={props.title}
+                subtitle={props.subtitle}
                 open={cardOpen}
                 handleClose={handleCardClose}
             >
-                <Typography variant="h6" color="#FFFFFF">
-                    {props.subtitle}
-                </Typography>
-                <Typography variant="p" color="#FFFFFF">
-                    {props.description}
-                </Typography>
+                <Grid container spacing={4} mt={0}>
+                    <Grid item xs={12} md={8}>
+                        <Typography variant="p" color="#FFFFFF">
+                            {props.description}
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={12} md={4}>
+                        <Stack spacing={2} direction="column">
+                            Picture
+                            <Pagination count={5} size="large" />
+                        </Stack>
+                    </Grid>
+                </Grid>
             </ProjectPopup>
         </>
     );
