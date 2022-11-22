@@ -1,9 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.7f826f7f.css",
-    "main.js": "/static/js/main.1a6c43bd.js",
+    "main.js": "/static/js/main.62652b8a.js",
     "static/js/787.4375ac29.chunk.js": "/static/js/787.4375ac29.chunk.js",
     "static/media/background.png": "/static/media/background.20b84ff5519b05592ffc.png",
+    "static/media/arcade.PNG": "/static/media/arcade.833404deceeaebefd146.PNG",
+    "static/media/septicsensor.png": "/static/media/septicsensor.f0ce4c8d7fb6768f67b5.png",
+    "static/media/LEDcontrolbox.png": "/static/media/LEDcontrolbox.880ea0febcc5570c7cb3.png",
+    "static/media/retrogaming.png": "/static/media/retrogaming.d6d5f40a3322f3616c23.png",
+    "static/media/drone.png": "/static/media/drone.ed33821216136bcc9b4b.png",
     "static/media/profile_pic.JPG": "/static/media/profile_pic.d3f8aa2c5a3b535dda08.JPG",
     "static/media/react_logo.png": "/static/media/react_logo.283bf42c605cfc49cf49.png",
     "static/media/C_logo.PNG": "/static/media/C_logo.9d8b1230ad64c967294b.PNG",
@@ -11,11 +16,11 @@
     "static/media/Logo.svg": "/static/media/Logo.ef62db12cb9f53b4bf4453c4b212af23.svg",
     "index.html": "/index.html",
     "main.7f826f7f.css.map": "/static/css/main.7f826f7f.css.map",
-    "main.1a6c43bd.js.map": "/static/js/main.1a6c43bd.js.map",
+    "main.62652b8a.js.map": "/static/js/main.62652b8a.js.map",
     "787.4375ac29.chunk.js.map": "/static/js/787.4375ac29.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7f826f7f.css",
-    "static/js/main.1a6c43bd.js"
+    "static/js/main.62652b8a.js"
   ]
 }
