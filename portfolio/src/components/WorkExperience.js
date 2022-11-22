@@ -75,7 +75,6 @@ export default function WorkExperiencePanel(props) {
                 value={value}
                 onChange={handleChange}
                 aria-label="Vertical tabs example"
-                //textColor="white"
                 TabIndicatorProps={{
                     sx: { backgroundColor: "#9382AB", width: 2 }
                     }}
