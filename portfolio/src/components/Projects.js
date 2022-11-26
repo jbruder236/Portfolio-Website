@@ -10,100 +10,30 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
-import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
+import IconButton from '@mui/material/IconButton';
+import Link from '@mui/material/Link';
 
+import pdf_icon from "../assets/pdf_icon.png";
+import download_icon from "../assets/download_icon.png";
+import ResumePDF from '../assets/Resume.pdf';
+
+//Project Card Pictures
 import drone from "../assets/drone.png";
 import LEDcontrolbox from "../assets/LEDcontrolbox.png";
 import retrogaming from "../assets/retrogaming.png";
 import septicsensor from "../assets/septicsensor.png";
-import arcade from "../assets/arcade.PNG";
+import arcade from "../assets/arcade/arcade.PNG";
+
+//Project Pagination Pictures
+import arcade_back from "../assets/arcade/arcade_back.JPG";
+import arcade_inside from "../assets/arcade/arcade_inside.png";
+import arcade_wiring from "../assets/arcade/arcade_wiring.png";
+
+import ProjectCard from "./ProjectCard.js";
 
 
-//TODO: Fix dialog width
-//A dialog with a close button
-function ProjectPopup(props) {
-	return (
-		<Dialog open={props.open} onClose={props.handleClose} fullWidth maxWidth="lg">
-			<DialogContent sx={{backgroundColor: "#6D676E"}}>
-                <Box mb={1} sx={{display: 'flex', justifyContent: "flex-end"}}>
-                    <Button onClick={props.handleClose}>X</Button>
-                </Box>
-                <Box mb={1} sx={{display: 'flex', flexDirection: 'column', alignItems: "center"}}>
-                    <Typography variant="h4" color="#E7CF6C">
-                        {props.title}
-                    </Typography>
-                    <Typography variant="h6" color="#FFFFFF">
-                        {props.subtitle}
-                    </Typography>
-                </Box>
-				{props.children}
-			</DialogContent>
-		</Dialog>
-	);
-};
-
-ProjectPopup.propTypes = {
-    title: PropTypes.string.isRequired,
-    open: PropTypes.bool.isRequired,
-    handleClose: PropTypes.func.isRequired,
-}
-
-//TODO: On hover make cursor select and darken card
-function ProjectCard(props) {
-
-    const [cardOpen, setCardOpen] = React.useState(false);
-    const handleClickCardOpen = () => { setCardOpen(true); console.log("Open"); };
-    const handleCardClose = () => { setCardOpen(false); console.log("Close"); };
-
-    return (
-        <>
-            <div onClick={handleClickCardOpen} 
-            style={{ 
-                backgroundImage: `url(${props.img})`,
-                backgroundRepeat: 'no-repeat',
-                backgroundSize: 'cover',
-                minHeight: '300px',
-            }}>
-                <Typography variant="h5" color="#E7CF6C" pt={2} pb={1} px={1}>
-                    {props.title}
-                </Typography>
-                <Typography variant="h6" color="#FFFFFF">
-                    {props.subtitle}
-                </Typography>
-            </div>
-            <ProjectPopup
-                title={props.title}
-                subtitle={props.subtitle}
-                open={cardOpen}
-                handleClose={handleCardClose}
-            >
-                <Grid container spacing={4} mt={0}>
-                    <Grid item xs={12} md={8}>
-                        <Typography variant="p" color="#FFFFFF">
-                            {props.description}
-                        </Typography>
-                    </Grid>
-                    <Grid item xs={12} md={4}>
-                        <Stack spacing={2} direction="column">
-                            Picture
-                            <Pagination count={5} size="large" />
-                        </Stack>
-                    </Grid>
-                </Grid>
-            </ProjectPopup>
-        </>
-    );
-}
-
-ProjectCard.propTypes = {
-    title: PropTypes.string.isRequired,
-    subtitle: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    img: PropTypes.string.isRequired,
-};
-
-
+//TODO: Experiment with MUI image lists (Masonry Image List for Project Cards)
 export default function Projects(props) {
 
     return (
@@ -111,7 +41,7 @@ export default function Projects(props) {
             <Typography variant="h3" color="#FFFFFF" pt={60}>
                 Personal Projects
             </Typography>
-            <Grid container spacing={6} mb={10} mt={3}>
+            <Grid container spacing={4} mb={10} mt={3}>
                 <Grid item xs={12} md={4}>
                     <ProjectCard
                         title="Arcade Conversion"
@@ -125,7 +55,7 @@ export default function Projects(props) {
                         arcade machine acted as a controller. Arcade inputs were mapped to a controller 
                         equivalent, and the Arduino emulated a modern controller. The CRT screen was 
                         faulty, and was gutted and replaced with a modern HD display which was mounted inside."
-                        img={arcade}
+                        img={[arcade, arcade_back, arcade_inside, arcade_wiring]}
                     />
                 </Grid>
                 <Grid item xs={12} md={4}>
@@ -133,7 +63,7 @@ export default function Projects(props) {
                         title="LED Control Box"
                         subtitle="Custom-built case to house microcontroller w/ GPIO, cooling, screen, and power supplies."
                         description=""
-                        img={LEDcontrolbox}
+                        img={[LEDcontrolbox]}
                     />
                 </Grid>
                 <Grid item xs={12} md={4}>
@@ -141,7 +71,7 @@ export default function Projects(props) {
                         title="Septic Burst Detection"
                         subtitle="For installation in waste drainage systems. Commissioned by Fecal Ferry (fecalferry.com)."
                         description=""
-                        img={septicsensor}
+                        img={[septicsensor]}
                     />
                 </Grid>
                 <Grid item xs={12} md={4}>
@@ -149,7 +79,7 @@ export default function Projects(props) {
                         title="Portable Retro Gaming Console"
                         subtitle="3D-Modeled enclosure for Raspberry Pi running RetroPie. Designed like NES w/ case screen insert and internal battery."
                         description=""
-                        img={retrogaming}
+                        img={[retrogaming]}
                     />
                 </Grid>
                 <Grid item xs={12} md={4}>
@@ -157,7 +87,7 @@ export default function Projects(props) {
                         title="Autonomous Drone"
                         subtitle="UAV system built to spec for AUVSI competition. Designed and constructed with HKHS team."
                         description=""
-                        img={drone}
+                        img={[drone]}
                     />
                 </Grid>
                 <Grid item xs={12} md={4}>
@@ -165,8 +95,21 @@ export default function Projects(props) {
                         title="Music-Responsive LEDs"
                         subtitle="Custom-built case to house microcontroller w/ GPIO, cooling, screen, and power supplies"
                         description=""
-                        img={LEDcontrolbox}
+                        img={[LEDcontrolbox]}
                     />
+                </Grid>
+                <Grid item xs={12}>
+                    <Stack direction="row" spacing={1} mt={4} justifyContent="center" alignItems="center">
+                        <Typography variant="h5" color="#FFFFFF">
+                            Resume Download
+                        </Typography>
+                        <a href={ResumePDF} download="Resume.pdf">
+                            <IconButton size="medium" disableRipple>
+                                <img src={pdf_icon} alt="PDF Icon" style={{paddingRight: '6px', height: '40px'}} />
+                                <img src={download_icon} alt="Download Icon" style={{height: '40px'}} />
+                            </IconButton>
+                        </a>
+                    </Stack>
                 </Grid>
             </Grid>
         </div>

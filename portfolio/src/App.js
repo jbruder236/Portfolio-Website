@@ -14,6 +14,8 @@ import Navbar from './components/Navbar';
 import Welcome from './components/Welcome';
 import Resume from './components/Resume';
 import Projects from './components/Projects';
+import Interests from './components/Interests';
+import Contact from './components/Contact';
 
 //Assets
 import logo from './assets/reactLogo.svg';
@@ -48,10 +50,21 @@ function App() {
       </div>
 
       <div style={{ 
-          background: "rgb(85,97,122)",
           background: "linear-gradient(180deg, rgba(85,97,122,1) 0%, rgba(229,164,148,0.8) 65%)",
       }}>
         <Projects />
+      </div>
+
+      <div style={{ 
+          background: "linear-gradient(180deg, rgba(229,164,148,.8) 0%, rgba(125,200,232,1) 30%)",
+      }}>
+        <Interests />
+      </div>
+
+      <div style={{ 
+          background: "linear-gradient(180deg, rgba(125,200,232,1) 0%, rgba(85,97,122,1) 80%)",
+      }}>
+        <Contact />
       </div>
 
     </div>
