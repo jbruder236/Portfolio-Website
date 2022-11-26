@@ -8,7 +8,7 @@ In the project directory, you can run:
 
 ### `npm run deploy`
 
-Deploys the app to github pages.
+Builds and Deploys the app to github pages.
 May require some configuration on gh-pages settings.
 
 ### `npm start`
