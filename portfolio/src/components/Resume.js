@@ -1,13 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
-import Stack from '@mui/material/Stack';
 
 import WorkExperiencePanel from './WorkExperience.js';
 import CourseworkPanel from './Coursework.js';

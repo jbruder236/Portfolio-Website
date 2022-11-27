@@ -4,7 +4,6 @@ import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 
-import background from "../assets/background.png";
 import profile_pic from "../assets/profile_pic.JPG";
 
 
@@ -27,12 +26,12 @@ export default function Welcome(props) {
                 <br/>
                 University of Connecticut
             </Typography>
-            <p>
+            <p style={{padding: 0, margin: 0, marginTop: 15}}>
                 Hi! My name is James and I'm a Senior Computer Science Engineering student at University of Connecticut.
                 I will be looking for a software engineering job when I graduate in May 2023. I've worked with ReactJS 
                 but have helped teach a Systems Programming class in C. My personal interests include downhill longboarding,
-                street skateboarding, and using microcontrollers to build interesting projects. Check out my Resume, Skills, 
-                and Projects below!
+                street skateboarding, and using microcontrollers to build interesting projects. This site is still under 
+                construction, but check out my Resume, Skills, and Projects below!
             </p>
         </Container>
     )

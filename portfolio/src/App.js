@@ -6,8 +6,6 @@ import './App.css';
 
 //MUI
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
 
 //Pages
 import Navbar from './components/Navbar';
@@ -18,7 +16,6 @@ import Interests from './components/Interests';
 import Contact from './components/Contact';
 
 //Assets
-import logo from './assets/reactLogo.svg';
 import background from "./assets/background.png";
 
 
@@ -38,7 +35,6 @@ function App() {
           backgroundImage: `linear-gradient(to bottom, rgba(176,128,120,0) 70%, rgba(85,97,122,1) 100%), url(${background})`,
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'cover',
-          marginTop: '-16px',
       }}>
         <Welcome />
       </div>

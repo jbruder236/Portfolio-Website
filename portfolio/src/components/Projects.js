@@ -1,18 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 // MUI
-import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 import IconButton from '@mui/material/IconButton';
-import Link from '@mui/material/Link';
 
 import pdf_icon from "../assets/pdf_icon.png";
 import download_icon from "../assets/download_icon.png";
