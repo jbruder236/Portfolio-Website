@@ -28,18 +28,11 @@ export default function Welcome(props) {
                 University of Connecticut
             </Typography>
             <p>
-                Hey! My name is James and I'm a Senior Computer Science Engineering student at University of Connecticut.
-                I will be looking for a software engineering job when I graduate in May 2023.
-                I've worked with ...
-                Some personal hobbies/interests are ...
-
-                Technologies I've worked with:
-                -React
-                -C/C++
-
-                Technologies I'm interested in pursuing further:
-                -Python
-                -ML/AI
+                Hi! My name is James and I'm a Senior Computer Science Engineering student at University of Connecticut.
+                I will be looking for a software engineering job when I graduate in May 2023. I've worked with ReactJS 
+                but have helped teach a Systems Programming class in C. My personal interests include downhill longboarding,
+                street skateboarding, and using microcontrollers to build interesting projects. Check out my Resume, Skills, 
+                and Projects below!
             </p>
         </Container>
     )

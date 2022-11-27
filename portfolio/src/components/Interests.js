@@ -15,7 +15,12 @@ export default function Interests(props) {
             <Typography variant="h3" color="#FFFFFF" pt={40}>
                 Interests
             </Typography>
+            <Typography variant="h6" color="#FFFFFF" mt={4} mb={10}>
+                *Currently in Development*
+            </Typography>
+            {/*TODO: stuff on left of alt logo*/}
             <img src={alt_logo} alt="Alt Logo" />
+            {/*TODO: stuff on right of alt logo*/}
         </div>
     )
 }

@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography';
 export default function Interests(props) {
 
     return (
-        <div style={{minHeight: '50vh', paddingLeft: '5vh', paddingRight: '5vh'}}>
+        <div style={{minHeight: '50vh', paddingLeft: '5vh', paddingRight: '5vh', paddingBottom: '4vh'}}>
             <Typography variant="h3" color="#FFFFFF" pt={30} pb={35}>
                 Contact Me
             </Typography>

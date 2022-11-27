@@ -41,7 +41,7 @@ export default function Projects(props) {
             <Typography variant="h3" color="#FFFFFF" pt={60}>
                 Personal Projects
             </Typography>
-            <Grid container spacing={4} mb={10} mt={3}>
+            <Grid container spacing={4} mt={3}>
                 <Grid item xs={12} md={4}>
                     <ProjectCard
                         title="Arcade Conversion"
