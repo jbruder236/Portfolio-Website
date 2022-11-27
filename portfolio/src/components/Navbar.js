@@ -1,5 +1,6 @@
-import * as React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { HashLink, NavHashLink } from 'react-router-hash-link';
 
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -42,8 +43,8 @@ HideOnScroll.propTypes = {
 /* TODO:
     -Remove duplicated code for scroll variant
     -Have IconButton redirect to jamesbruder.com
-    -Link underlining using state and link hash navigation
     -Fix Link spacing for all screen sizes (hide/other nav if viewport is too narrow)
+    -Create transition for active section switch
 */
 
 Navbar.propTypes = {
@@ -51,6 +52,41 @@ Navbar.propTypes = {
 };
 
 export default function Navbar(props) {
+
+
+    const [section, setSection] = React.useState('about');
+    var currentPage = 'about';
+    useEffect(() => {
+        const onScroll = (event) => {
+            let about = elementInViewport('about');
+            let resume = elementInViewport('resume');
+            let projects = elementInViewport('projects');
+            let interests = elementInViewport('interests');
+            let contact = elementInViewport('contact');
+            let page;
+            if(contact)
+              page = 'contact';
+            else if(interests)
+              page = 'interests';
+            else if(projects)
+              page = 'projects';
+            else if(resume)
+              page = 'resume';
+            else if(about)
+              page = 'about';  
+            if(currentPage !== page) {
+              currentPage = page
+              setSection(currentPage);
+              console.log("Current Page: " + currentPage);
+            }
+        }
+        window.addEventListener('scroll', onScroll);
+        return () => {
+          window.removeEventListener('scroll', onScroll);
+        }
+      }, []);
+
+
     if(props.hideOnScroll){
         return (
             <HideOnScroll {...props}>
@@ -84,21 +120,21 @@ export default function Navbar(props) {
                         width: '30%',
                         mr: '20px',
                         }}>
-                            <Link href="#About" underline="always" color="#FFFFFF">
+                            <HashLink smooth to="/#about" style={{textDecoration: section==='about' ? "underline" : "none", color: "#FFFFFF"}}>
                                 About
-                            </Link>
-                            <Link href="#Resume" underline="none" color="#FFFFFF">
+                            </HashLink>
+                            <HashLink smooth to="/#resume" style={{textDecoration: section==='resume' ? "underline" : "none", color: "#FFFFFF"}}>
                                 Resume
-                            </Link>
-                            <Link href="#Projects" underline="none" color="#FFFFFF">
+                            </HashLink>
+                            <HashLink smooth to="/#projects" style={{textDecoration: section==='projects' ? "underline" : "none", color: "#FFFFFF"}}>
                                 Projects
-                            </Link>
-                            <Link href="#Interests" underline="none" color="#FFFFFF">
+                            </HashLink>
+                            <HashLink smooth to="/#interests" style={{textDecoration: section==='interests' ? "underline" : "none", color: "#FFFFFF"}}>
                                 Interests
-                            </Link>
-                            <Link href="#Contact" underline="none" color="#FFFFFF">
+                            </HashLink>
+                            <HashLink smooth to="/#contact" style={{textDecoration: section==='contact' ? "underline" : "none", color: "#FFFFFF"}}>
                                 Contact
-                            </Link>
+                            </HashLink>
                         </Box>
                     </Toolbar>
                 </AppBar>
@@ -137,24 +173,36 @@ export default function Navbar(props) {
                     width: '30%',
                     mr: '20px',
                     }}>
-                        <Link href="#About" underline="always" color="#FFFFFF">
-                            About
-                        </Link>
-                        <Link href="#Resume" underline="none" color="#FFFFFF">
+                        <HashLink smooth to="/#about" style={{textDecoration: section==='about' ? "underline" : "none", color: "#FFFFFF"}}>
+                                About
+                        </HashLink>
+                        <HashLink smooth to="/#resume" style={{textDecoration: section==='resume' ? "underline" : "none", color: "#FFFFFF"}}>
                             Resume
-                        </Link>
-                        <Link href="#Projects" underline="none" color="#FFFFFF">
+                        </HashLink>
+                        <HashLink smooth to="/#projects" style={{textDecoration: section==='projects' ? "underline" : "none", color: "#FFFFFF"}}>
                             Projects
-                        </Link>
-                        <Link href="#Interests" underline="none" color="#FFFFFF">
+                        </HashLink>
+                        <HashLink smooth to="/#interests" style={{textDecoration: section==='interests' ? "underline" : "none", color: "#FFFFFF"}}>
                             Interests
-                        </Link>
-                        <Link href="#Contact" underline="none" color="#FFFFFF">
+                        </HashLink>
+                        <HashLink smooth to="/#contact" style={{textDecoration: section==='contact' ? "underline" : "none", color: "#FFFFFF"}}>
                             Contact
-                        </Link>
+                        </HashLink>
                     </Box>
                 </Toolbar>
             </AppBar>
           );
+    }
+  }
+
+  function elementInViewport(id) {
+    var myElement = document.getElementById(id);
+    var myElementHeight = myElement.offsetHeight;
+    var bounding = myElement.getBoundingClientRect();
+  
+    if (bounding.top >= -myElementHeight && bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) + myElementHeight) {
+        return true;
+    } else {
+        return false;
     }
   }

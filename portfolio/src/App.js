@@ -1,7 +1,5 @@
-import React from 'react';
-//Router Options:
-import { HashLink } from 'react-router-hash-link';
-import { NavHashLink } from 'react-router-hash-link';
+import React, { useEffect } from 'react';
+import { HashLink, NavHashLink } from 'react-router-hash-link';
 import './App.css';
 
 //MUI
@@ -24,47 +22,66 @@ import background from "./assets/background.png";
       -Experiment with maxWidth for viewport for entire app
       -
 */
-function App() {
+
+
+export default function App() {
+
+  
 
   return (
     <div className="App">
 
       <Navbar hideOnScroll={false} />
 
-      <div style={{ 
+      <section id="about"
+        style={{ 
           backgroundImage: `linear-gradient(to bottom, rgba(176,128,120,0) 70%, rgba(85,97,122,1) 100%), url(${background})`,
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'cover',
       }}>
         <Welcome />
-      </div>
+      </section>
 
-      <div style={{ 
+      <section id="resume"
+        style={{ 
           background: "#55617a",
       }}>
         <Resume />
-      </div>
+      </section>
 
-      <div style={{ 
+      <section id="projects"
+        style={{ 
           background: "linear-gradient(180deg, rgba(85,97,122,1) 0%, rgba(229,164,148,0.8) 65%)",
       }}>
         <Projects />
-      </div>
+      </section>
 
-      <div style={{ 
+      <section id="interests"
+        style={{ 
           background: "linear-gradient(180deg, rgba(229,164,148,.8) 0%, rgba(125,200,232,1) 30%)",
       }}>
         <Interests />
-      </div>
+      </section>
 
-      <div style={{ 
+      <section id="contact"
+        style={{ 
           background: "linear-gradient(180deg, rgba(125,200,232,1) 0%, rgba(85,97,122,1) 80%)",
       }}>
         <Contact />
-      </div>
+      </section>
 
     </div>
   );
 }
 
-export default App;
+function elementInViewport(id) {
+  var myElement = document.getElementById(id);
+  var myElementHeight = myElement.offsetHeight;
+  var bounding = myElement.getBoundingClientRect();
+
+  if (bounding.top >= -myElementHeight && bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) + myElementHeight) {
+      return true;
+  } else {
+      return false;
+  }
+}
