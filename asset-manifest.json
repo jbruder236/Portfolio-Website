@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.7f826f7f.css",
-    "main.js": "/static/js/main.e4445d70.js",
+    "main.js": "/static/js/main.6f8d50e0.js",
     "static/js/787.4375ac29.chunk.js": "/static/js/787.4375ac29.chunk.js",
     "static/media/arcade_wiring.png": "/static/media/arcade_wiring.9dadc4405302f8a02db0.png",
     "static/media/background.png": "/static/media/background.20b84ff5519b05592ffc.png",
@@ -12,20 +12,24 @@
     "static/media/LEDcontrolbox.png": "/static/media/LEDcontrolbox.880ea0febcc5570c7cb3.png",
     "static/media/retrogaming.png": "/static/media/retrogaming.d6d5f40a3322f3616c23.png",
     "static/media/drone.png": "/static/media/drone.ed33821216136bcc9b4b.png",
-    "static/media/alt_logo.png": "/static/media/alt_logo.ee9351be3006c483de6f.png",
+    "static/media/alt_logo.png": "/static/media/alt_logo.e4c62206f7c43f771dd6.png",
     "static/media/profile_pic.JPG": "/static/media/profile_pic.d3f8aa2c5a3b535dda08.JPG",
+    "static/media/breadboard_icon.png": "/static/media/breadboard_icon.c321a712f8e15de64b2c.png",
     "static/media/Resume.pdf": "/static/media/Resume.0deeab86b552f188f9a6.pdf",
+    "static/media/raspberry_logo.png": "/static/media/raspberry_logo.82804a2c345a9c54be2c.png",
     "static/media/react_logo.png": "/static/media/react_logo.283bf42c605cfc49cf49.png",
-    "static/media/C_logo.PNG": "/static/media/C_logo.9d8b1230ad64c967294b.PNG",
+    "static/media/arduino_logo.png": "/static/media/arduino_logo.e66a6a4682a5e628d773.png",
+    "static/media/CLI_icon.png": "/static/media/CLI_icon.4b97a55b253f6a68af03.png",
+    "static/media/C_logo.PNG": "/static/media/C_logo.5b222c2ba37f54fb7dfe.PNG",
     "static/media/reactLogo.svg": "/static/media/reactLogo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "static/media/Logo.svg": "/static/media/Logo.ef62db12cb9f53b4bf4453c4b212af23.svg",
     "index.html": "/index.html",
     "main.7f826f7f.css.map": "/static/css/main.7f826f7f.css.map",
-    "main.e4445d70.js.map": "/static/js/main.e4445d70.js.map",
+    "main.6f8d50e0.js.map": "/static/js/main.6f8d50e0.js.map",
     "787.4375ac29.chunk.js.map": "/static/js/787.4375ac29.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7f826f7f.css",
-    "static/js/main.e4445d70.js"
+    "static/js/main.6f8d50e0.js"
   ]
 }
