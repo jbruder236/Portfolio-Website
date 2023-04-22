@@ -9,7 +9,6 @@ import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Slide from '@mui/material/Slide';
-import Link from '@mui/material/Link';
 
 import logo from '../assets/Logo.svg'
 
@@ -60,6 +59,7 @@ export default function Navbar(props) {
         const onScroll = (event) => {
             let about = elementInViewport('about');
             let resume = elementInViewport('resume');
+            let skills = elementInViewport('skills');
             let projects = elementInViewport('projects');
             let interests = elementInViewport('interests');
             let contact = elementInViewport('contact');
@@ -70,6 +70,8 @@ export default function Navbar(props) {
               page = 'interests';
             else if(projects)
               page = 'projects';
+            else if(skills)
+              page = 'skills';
             else if(resume)
               page = 'resume';
             else if(about)
@@ -105,6 +107,7 @@ export default function Navbar(props) {
                             aria-label="menu"
                             sx={{ mr: 2 }}
                             disableRipple
+                            href="https://jamesbruder.com/"
                         >
                             <img src={logo} alt="My Logo" />
                             <Typography variant="h6">
@@ -117,7 +120,7 @@ export default function Navbar(props) {
                         flexDirection: 'row',
                         flexWrap: 'nowrap',
                         justifyContent: 'space-between',
-                        width: '30%',
+                        width: 'min(40%, 550px)',
                         mr: '20px',
                         }}>
                             <HashLink smooth to="/#about" style={{textDecoration: section==='about' ? "underline" : "none", color: "#FFFFFF"}}>
@@ -125,6 +128,9 @@ export default function Navbar(props) {
                             </HashLink>
                             <HashLink smooth to="/#resume" style={{textDecoration: section==='resume' ? "underline" : "none", color: "#FFFFFF"}}>
                                 Resume
+                            </HashLink>
+                            <HashLink smooth to="/#skills" style={{textDecoration: section==='skills' ? "underline" : "none", color: "#FFFFFF"}}>
+                                Skills
                             </HashLink>
                             <HashLink smooth to="/#projects" style={{textDecoration: section==='projects' ? "underline" : "none", color: "#FFFFFF"}}>
                                 Projects
@@ -158,6 +164,7 @@ export default function Navbar(props) {
                         aria-label="menu"
                         sx={{ mr: 2 }}
                         disableRipple
+                        href="https://jamesbruder.com/"
                     >
                         <img src={logo} alt="My Logo" />
                         <Typography variant="h6">
@@ -170,7 +177,7 @@ export default function Navbar(props) {
                     flexDirection: 'row',
                     flexWrap: 'nowrap',
                     justifyContent: 'space-between',
-                    width: '30%',
+                    width: 'min(40%, 550px)',
                     mr: '20px',
                     }}>
                         <HashLink smooth to="/#about" style={{textDecoration: section==='about' ? "underline" : "none", color: "#FFFFFF"}}>
@@ -179,6 +186,9 @@ export default function Navbar(props) {
                         <HashLink smooth to="/#resume" style={{textDecoration: section==='resume' ? "underline" : "none", color: "#FFFFFF"}}>
                             Resume
                         </HashLink>
+                        <HashLink smooth to="/#skills" style={{textDecoration: section==='skills' ? "underline" : "none", color: "#FFFFFF"}}>
+                                Skills
+                            </HashLink>
                         <HashLink smooth to="/#projects" style={{textDecoration: section==='projects' ? "underline" : "none", color: "#FFFFFF"}}>
                             Projects
                         </HashLink>

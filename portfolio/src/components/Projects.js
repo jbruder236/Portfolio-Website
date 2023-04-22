@@ -6,21 +6,21 @@ import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 import IconButton from '@mui/material/IconButton';
 
-import pdf_icon from "../assets/pdf_icon.png";
-import download_icon from "../assets/download_icon.png";
+import pdf_icon from "../assets/pdf_icon.webp";
+import download_icon from "../assets/download_icon.webp";
 import ResumePDF from '../assets/Resume.pdf';
 
 //Project Card Pictures
-import drone from "../assets/drone.png";
-import LEDcontrolbox from "../assets/LEDcontrolbox.png";
-import retrogaming from "../assets/retrogaming.png";
-import septicsensor from "../assets/septicsensor.png";
-import arcade from "../assets/arcade/arcade.PNG";
+import drone from "../assets/drone.webp";
+import LEDcontrolbox from "../assets/LEDcontrolbox.webp";
+import retrogaming from "../assets/retrogaming.webp";
+import septicsensor from "../assets/septicsensor.webp";
+import arcade from "../assets/arcade/arcade.webp";
 
 //Project Pagination Pictures
-import arcade_back from "../assets/arcade/arcade_back.JPG";
-import arcade_inside from "../assets/arcade/arcade_inside.png";
-import arcade_wiring from "../assets/arcade/arcade_wiring.png";
+import arcade_back from "../assets/arcade/arcade_back.webp";
+import arcade_inside from "../assets/arcade/arcade_inside.webp";
+import arcade_wiring from "../assets/arcade/arcade_wiring.webp";
 
 import ProjectCard from "./ProjectCard.js";
 
@@ -38,7 +38,7 @@ export default function Projects(props) {
                     <ProjectCard
                         title="Arcade Conversion"
                         subtitle="Using an arcade machine to play modern driving simulators."
-                        description="An arduino was programmed to read all analog inputs from the 
+                        description="Note: code was lost and do not have on github. An arduino was programmed to read all analog inputs from the 
                         arcade machine, including potentiometers for the steering and pedals, and 
                         buttons for the shifter and front-panel buttons. There were several modes 
                         for arduino control for different games/functionality. For instance, Mode 2 
@@ -86,6 +86,14 @@ export default function Projects(props) {
                     <ProjectCard
                         title="Music-Responsive LEDs"
                         subtitle="Custom-built case to house microcontroller w/ GPIO, cooling, screen, and power supplies"
+                        description=""
+                        img={[LEDcontrolbox]}
+                    />
+                </Grid>
+                <Grid item xs={12} md={4}>
+                    <ProjectCard
+                        title="MIDI LED Control"
+                        subtitle="------"
                         description=""
                         img={[LEDcontrolbox]}
                     />

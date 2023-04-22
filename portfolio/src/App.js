@@ -9,12 +9,13 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Navbar from './components/Navbar';
 import Welcome from './components/Welcome';
 import Resume from './components/Resume';
+import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Interests from './components/Interests';
 import Contact from './components/Contact';
 
 //Assets
-import background from "./assets/background.png";
+import background from "./assets/background.webp";
 
 
 /* TODO:
@@ -44,9 +45,16 @@ export default function App() {
 
       <section id="resume"
         style={{ 
-          background: "#55617a",
+          background:  "#55617a",
       }}>
         <Resume />
+      </section>
+
+      <section id="skills"
+        style={{ 
+          background: "#55617a",
+      }}>
+        <Skills />
       </section>
 
       <section id="projects"

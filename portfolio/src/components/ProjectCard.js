@@ -14,6 +14,8 @@ import Slide from '@mui/material/Slide';
 
 
 //TODO: Fix hover styling
+//For background image w/ color overlay, look at App.js About div
+//Use Glassmorphism CSS resource for card overlay w/ text w/ Transition.Style
 export default function ProjectCard(props) {
 
     const numPics = props.img.length;
@@ -31,26 +33,24 @@ export default function ProjectCard(props) {
         <>
             <Box onClick={handleClickCardOpen} 
                 sx={{
-                    backgroundImage: `url(${props.img[0]})`,
+                    background: `url(${props.img[0]})`,
                     backgroundRepeat: 'no-repeat',
                     backgroundSize: 'cover',
                     minHeight: '300px',
                     cursor: 'pointer',
                     opacity: 0.75,
                     boxSizing: "border-box",
-                    //borderRadius: "1rem",
                     "&:hover": {
                         border: "10px solid rgba(255, 255, 255, 0)",
+                        backgroundClip: 'padding-box',
                         opacity: 1,
                         transition: "all 0.5s",
-                        //borderRadius: "3rem",
                       },
-                }}
-            >
-                <Typography variant="h5" color="#E7CF6C" pt={2} pb={1} px={1} style={{opacity: "1"}}>
+            }}>
+                <Typography variant="h5" color="#E7CF6C" pt={2} pb={1} px={1}>
                     {props.title}
                 </Typography>
-                <Typography variant="h6" color="#FFFFFF" style={{opacity: 1}}>
+                <Typography variant="h6" color="#FFFFFF">
                     {props.subtitle}
                 </Typography>
             </Box>
@@ -90,7 +90,6 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   });
 
 //TODO: Fix dialog width
-//TODO: Add transition for dialog open/close
 //A dialog with a close button
 function ProjectPopup(props) {
 	return (

@@ -3,7 +3,7 @@ import React from 'react';
 // MUI
 import Typography from '@mui/material/Typography';
 
-import alt_logo from "../assets/alt_logo.png";
+import alt_logo from "../assets/alt_logo.webp";
 
 
 

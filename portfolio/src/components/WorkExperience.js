@@ -62,6 +62,8 @@ function WorkExperience(props) {
     );
 }
 
+
+//TODO: Make experience selections look more like buttons w/ better active indicator (background coloring)
 export default function WorkExperiencePanel(props) {
 
     const [value, setValue] = React.useState(1);
