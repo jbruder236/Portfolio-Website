@@ -13,6 +13,7 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Interests from './components/Interests';
 import Contact from './components/Contact';
+import VideoFeature from './components/VideoFeature';
 
 //Assets
 import background from "./assets/background.webp";
@@ -77,6 +78,10 @@ export default function App() {
       }}>
         <Contact />
       </section>
+
+      <div className="App">
+        <VideoFeature />
+      </div>
 
     </div>
   );
