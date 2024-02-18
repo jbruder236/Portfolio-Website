@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 
+import skate_video from "../assets/skatefall.mp4";
+
 const VideoFeature = () => {
   const setHeightRef = useRef(null);
   const videoRef = useRef(null);
@@ -41,7 +43,7 @@ const VideoFeature = () => {
           left: 0,
           width: '100%'
       }}>
-        <source type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;" src="https://www.apple.com/media/us/mac-pro/2013/16C1b6b5-1d91-4fef-891e-ff2fc1c1bb58/videos/macpro_main_desktop.mp4"></source>
+        <source type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;" src={skate_video}></source>
       </video>
     </div>
   );
